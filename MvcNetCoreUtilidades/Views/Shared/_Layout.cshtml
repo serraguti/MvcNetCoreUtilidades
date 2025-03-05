@@ -25,6 +25,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark"
+                               asp-controller="Coches"
+                               asp-action="Index">
+                                Coches Ajax
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"
                                asp-controller="Mails"
                                asp-action="SendMail">
                                 Mails
@@ -75,6 +82,7 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
+                        <partial name="_MenuUsuario"/>
                     </ul>
                 </div>
             </div>
