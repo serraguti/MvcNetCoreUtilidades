@@ -26,7 +26,14 @@ namespace MvcNetCoreUtilidades.Controllers
 
               new Coche { IdCoche = 4, Marca = "Ford"
 
-             , Modelo = "Mustang GT", Imagen = "https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/03/prueba-wolf-racing-mustang-gt.jpg"}
+             , Modelo = "Mustang GT", Imagen = "https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/03/prueba-wolf-racing-mustang-gt.jpg"},
+              new Coche
+            {
+                IdCoche = 5,
+                Marca = "DMG"            ,
+                Modelo = "Deloread",
+                Imagen = "https://images.squarespace-cdn.com/content/v1/594eb9274c8b03ee09b041e9/1528551342886-RUWQG9WMW71X1Q0OH7RN/del1.png"
+            }
 
              };
         }
@@ -53,6 +60,13 @@ namespace MvcNetCoreUtilidades.Controllers
             Coche car =
                 this.Cars.FirstOrDefault(x => x.IdCoche == idcoche);
             return PartialView("_DetailsCoche", car);
+        }
+
+        public IActionResult Details(int idcoche)
+        {
+            Coche car =
+                this.Cars.FirstOrDefault(z => z.IdCoche == idcoche);
+            return View(car);
         }
     }
 }

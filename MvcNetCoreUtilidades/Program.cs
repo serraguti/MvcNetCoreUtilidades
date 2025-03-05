@@ -1,8 +1,10 @@
 using MvcNetCoreUtilidades.Helpers;
+using MvcNetCoreUtilidades.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<RepositoryCoches>();
 builder.Services.AddSingleton<HelperPathProvider>();
 
 builder.Services.AddSession();
